@@ -1,0 +1,4 @@
+# roscoff_unix_2015
+Unix tutorial (Ecole de bioinformatique AVIESAN)
+
+This repository contain the pedagogic material related to the course "Introduction to Unix" proposed by Matthieu Defrance and Denis Puthier in the context of the Ecole de bioinformatique AVIESAN. 
