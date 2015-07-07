@@ -11,9 +11,10 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-	      installation
-					  ~
-	      Indices and tables
+   installation
+ 
+
+Indices and tables 
 ==================
 
 * :ref:`genindex`
