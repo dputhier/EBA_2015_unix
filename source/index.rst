@@ -4,20 +4,40 @@
    contain the root `toctree` directive.
 
 
-AVIESAN Bioinformatic School: introduction to UNIX: ==================================================
+ ::
+
+   
+   
 
 
 
-Contents
-=========
+
+
+Ecole bioinformatique AVIESAN - Roscoff 2015 :fonticon:`fa fa-linux  fa-large`
+==============================================================================
+
+
+Introduction aux système UNIX - Application aux données de séquençage 
+---------------------------------------------------------------------
+ 
+
+Formateurs 
+
+   * Matthieu Defrance 
+   * Carl Herrmann
+   * Denis Puthier
+
+Contents 
+========
 
 
 
-.. toctree::
-   :maxdepth: 2
+.. toctree:: 
+   :maxdepth: 1
 
-   installation
+   installations
    connection
+   dataset
    first_steps
  
 
