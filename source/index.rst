@@ -12,7 +12,7 @@ Ecole bioinformatique AVIESAN - Roscoff 2015 :fonticon:`fa fa-linux  fa-large`
 ==============================================================================
 
 
-Introduction aux système UNIX - Application aux données de séquençage 
+Introduction aux système UNIX - Application aux données de séquençage
 ---------------------------------------------------------------------
  
 
@@ -22,7 +22,7 @@ Formateurs
    * Carl Herrmann
    * Denis Puthier
 
-Contents 
+Contents
 ========
 
 
@@ -40,5 +40,7 @@ Contents
     05.lister.rst 
     06.download.rst
     07.uncompress.rst
+    07b.visualization.rst
+    07c.pipe.rst
     08.fastqc.rst
 

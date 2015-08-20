@@ -1,0 +1,61 @@
+Visualiser le contenu d'un fichier
+==================================
+
+
+Maintenant que le fichier fastq est téléchargé, il peut être intéressant de
+visualiser son contenu. Pour se faire, nous avons de nombreuses commandes
+disponibles sous Linux.
+
+
+La commande more et la commande less
+------------------------------------
+
+La commande **more** permet d'en savoir plus sur un fichier (i.e de visualiser
+son contenu). La commande **less** fait plus ou moins la même chose. La
+commande **less** est cependant plus récente et plus ergonomique. Nous
+l'utiliserons donc.
+
+
+.. admonition:: Exercice 
+   :class: exo
+   
+   * Utilisez la commande less pour visualiser le contenu du fichier siNT_ER_E2_r3_chr21.fastq.
+
+   .. code-block:: bash
+   
+      $ cd ~/chipseq_tuto/raw_data
+      $ less siNT_ER_E2_r3_chr21.fastq    
+
+   * Utilisez les flêches du clavier (haut, bas) pour vous déplacer dans le fichier.
+   * Pour faire une recherche, on utilisera '/'. Tapez '/AAAA' pour rechercher la chaîne de caractère AAAA.
+   * tapez 'q' pour quitter.
+  
+
+Les commandes head et tail
+--------------------------
+
+Les commandes head et tail permettent de visualiser les n premières lignes et n
+dernières lignes d'un fichier respectivement.
+
+
+:: 
+   head [OPTION]... [FILE]...
+   tail [OPTION]... [FILE]...
+
+
+.. admonition:: Exercice 
+   :class: exo
+   
+   * Utilisez la commande head pour visualiser le contenu du fichier siNT_ER_E2_r3_chr21.fastq.
+
+   .. code-block:: bash
+   
+      $ cd ~/chipseq_tuto/raw_data
+      $ head  siNT_ER_E2_r3_chr21.fastq    
+
+   * Utilisez l'argument -n 10 pour visualiser les 10 premières lignes du fichier.
+   
+   .. code-block:: bash
+   
+      $ head -n 10   siNT_ER_E2_r3_chr21.fastq
+

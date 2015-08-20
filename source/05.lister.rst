@@ -59,6 +59,6 @@ Deux exemples ci-dessous pour illustrer.
 
    $ cd ~ 
    $ ls chipseq_tuto/*a* # l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et dont le nom contient un 'a'. 
-   $ ls chipseq_tuto/*m l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et finissant par un 'm'.
+   $ ls chipseq_tuto/*m* # l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et finissant par un 'm'.
 
 

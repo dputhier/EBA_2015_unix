@@ -1,24 +1,32 @@
-L'arborescence sous Linux 
-==========================
+L'arborescence sous Linux
+=========================
 
-Fichiers et dossiers 
----------------------
+Fichiers et dossiers
+--------------------
 
-Au même titre que sous Windows, les données sous unix sont contenues dans des **fichiers** qui eux même peuvent être contenus dans des **dossiers**. Afin de faciliter l'apprentissage des chemins sous Unix, nous allons utiliser le navigateur de fichier dans un premier temps. 
+Au même titre que sous Windows, les données sous unix sont contenues dans des
+**fichiers** qui eux même peuvent être contenus dans des **dossiers**. Afin de
+faciliter l'apprentissage des chemins sous Unix, nous allons utiliser le
+navigateur de fichier dans un premier temps. 
 
 .. important:: Lancez le navigateur de fichier en utilisant le menu "Places > Home folder".
 
 
-Dossier racine 
-----------------
+Dossier racine
+--------------
 
-Sous Windows, **la racine du disque** système est désignée par **C:\\**. Sous UNIX la racine est désignée par **"/"**. Dans cette racine on trouve un certain nombre de répertoires: La liste de ces répertoires peut varier d'un système à l'autre (Ubuntu, Centos, OSX...). Exemple de répertoires courant: 
+Sous Windows, **la racine du disque** système est désignée par **C:\\**. Sous
+UNIX la racine est désignée par **"/"**. Dans cette racine on trouve un certain
+nombre de répertoires: La liste de ces répertoires peut varier d'un système à
+l'autre (Ubuntu, Centos, OSX...). Exemple de répertoires courant: 
 
-   * /root Répertoire personnel (:fonticon:`fa fa-home icon-2x`) de l'administrateur (appelé "root").
+   * /root Répertoire personnel (:fonticon:`fa fa-home icon-2x`) de
+     l'administrateur (appelé "root").
    * /home Répertoires des utilisateurs (:fonticon:`fa fa-home icon-2x`).
    * /bin Programmes système (binaries). * /tmp Données temporaires.
    * /boot Noyau, Bootmanager. * /dev Fichiers des périphériques (devices).
-   * /etc Fichiers de configuration. (*et cetera* or Environment & Tool Configuration).
+   * /etc Fichiers de configuration. (*et cetera* or Environment & Tool
+     Configuration).
    * /lib Librairies partagées.
    * /mnt Répertoire de montage pour cdrom, floppy... (mount).
    * /opt Installations supplémentaires.
@@ -38,11 +46,15 @@ Sous Windows, **la racine du disque** système est désignée par **C:\\**. Sous
 
 
 Chemins absolus et chemins relatifs
-------------------------------------
+-----------------------------------
 
-Lorsqu'on désignera un dossier ou un fichier on pourra utiliser son **chemin relatif ou son chemin absolu**. 
+Lorsqu'on désignera un dossier ou un fichier on pourra utiliser son
+**chemin relatif ou son chemin absolu**. 
 
-Le **chemin absolu** correspond au chemin (la succession de dossiers à ouvrir) qui depuis la racine de l'arborescence permet d'accèder à l'élément en question. Le **chemin absolu** est non ambigu et on peut l'utiliser quel que soit le dossier dans lequel on se trouve. Exemple de chemin absolu: 
+Le **chemin absolu** correspond au chemin (la succession de dossiers à ouvrir)
+qui depuis la racine de l'arborescence permet d'accèder à l'élément en
+question. Le **chemin absolu** est non ambigu et on peut l'utiliser quel que
+soit le dossier dans lequel on se trouve. Exemple de chemin absolu: 
 
 .. code-block:: bash
 
@@ -65,7 +77,10 @@ Le **chemin absolu** correspond au chemin (la succession de dossiers à ouvrir) 
 
 
    
-Le **chemin relatif** est une autre solution permettant de désigner un dossier ou un fichier. Cependant, l'écriture se réfère à votre position à un instant donné dans l'arborescence. En écriture relative, certains opérateurs sont particulièrement utiles:
+Le **chemin relatif** est une autre solution permettant de désigner un dossier
+ou un fichier. Cependant, l'écriture se réfère à votre position à un instant
+donné dans l'arborescence. En écriture relative, certains opérateurs sont
+particulièrement utiles:
 
 .. code-block:: bash 
 
@@ -91,7 +106,10 @@ Le **chemin relatif** est une autre solution permettant de désigner un dossier 
       /usr/local/../..
       /usr/local/bin/../../..
    
-En **écriture relative** si l'on se trouve dans un dossier (e.g '/') qui contient le dossier (e.g 'root') on peut directement utiliser le nom du dossier comme chemin. Par exemple si je suis dans le dossier racine ('/') je peux écrire 'root':
+En **écriture relative** si l'on se trouve dans un dossier (e.g '/') qui
+contient le dossier (e.g 'root') on peut directement utiliser le nom du dossier
+comme chemin. Par exemple si je suis dans le dossier racine ('/') je peux
+écrire 'root':
 
 
 .. admonition:: Exercice
@@ -109,7 +127,10 @@ En **écriture relative** si l'on se trouve dans un dossier (e.g '/') qui contie
       root/Desktop # Le dossier Desktop qui se trouve dans le dossier root.
       Desktop # Ne fonctionne pas !! Pourquoi ?
    
-En effet ce dossier (root) est visible qu'en je suis localisé dans le dossier '/'. Par contre si je suis dans le dossier /root/Desktop, je ne pourrai pas faire référence à ce chemin (i.e root) car ce dossier n'existe pas dans le dossier courant.
+En effet ce dossier (root) est visible qu'en je suis localisé dans le dossier
+'/'. Par contre si je suis dans le dossier /root/Desktop, je ne pourrai pas
+faire référence à ce chemin (i.e root) car ce dossier n'existe pas dans le
+dossier courant.
 
 
 

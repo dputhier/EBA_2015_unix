@@ -1,0 +1,45 @@
+
+Aligner les reads
+=================
+
+Pour l'alignement, on utilise ici bowtie 1. Bowtie 1 nécessite un index. Les
+données seront alignées sur le génome hg19. Des index pour les génomes sont
+disponibles sur le site
+`iGenomes (illumina) <https://support.illumina.com/sequencing/sequencing_software/igenome.html>`_.
+Dans notre cas nous allons télécharger un index spécifique du chromosome 21
+humain. Une archive de fichiers compressées (hg19_chr21.tar.gz) au format
+*tar.gz se trouve à l'adresse:
+
+::
+
+   http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/hg19_chr21.tar.gz
+
+
+.. admonition:: Exercice :
+   :class: exo
+
+   * Déplacez vous dans le répertoire ~/chipseq_tuto/index. Téléchargez le fichier hg19_chr21.tar.gz.
+
+   .. code-block:: bash
+
+   $ cd ~/chipseq_tuto/index
+   $ wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/hg19_chr21.tar.gz
+   
+   * Décompressez le fichier avec l'utilitaire **tar**.
+   
+   x eXtraire
+   v Verbose (en parlant)
+   f Force (effacer les fichiers pré-existants)
+   z Décompresser avec gunzip
+   
+   .. code-block:: bash
+
+   $ tar xvfz hg19_chr21.tar.gz
+   
+   * Vérifiez la décompression avec la commande ls
+   
+   .. code-block:: bash
+
+   $ ls
+    
+   

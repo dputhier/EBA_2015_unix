@@ -1,32 +1,36 @@
 
-Analyser la qualité avec fastqc 
+Analyser la qualité avec fastqc
 ===============================
 
 La commande fastqc
--------------------
+------------------
 
 
-On peut utiliser la commande fastqc pour analyser la qualité des reads. Il faudra lui fournir un certain nombre d'arguments. La syntaxe générale est la suivante:
+On peut utiliser la commande fastqc pour analyser la qualité des reads. Il
+faudra lui fournir un certain nombre d'arguments. La syntaxe générale est la
+suivante:
 
 :: 
 
    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] fq1 fq2 fq3 ...
 
-Ici nous souhaitons stocker le résultat de fastqc (un dossier contenant une page web) dans le dossier:
+Ici nous souhaitons stocker le résultat de fastqc (un dossier contenant une page
+web) dans le dossier:
 
 ::
 
    chipseq_tuto/fastqc/siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise
 
 
-Nous devons tout d'abord créer le sous-dossier siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise  puis lancer fastqc:
+Nous devons tout d'abord créer le sous-dossier
+siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise  puis lancer fastqc:
 
 
 .. code-block:: bash 
 
-   $ cd chipseq_tuto/fastqc
-   $ mkdir siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise
-   $ fastqc -f fastq -o siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise ../raw_data/siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise.fastq 
+   $ cd ~/chipseq_tuto/fastqc
+   $ mkdir -p siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise
+   $ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq  
    
 
 
@@ -34,4 +38,4 @@ Pour visualiser le résultat on peut directement demander à firefox de l'ouvrir
 
 .. code-block:: bash
 
-   $ firefox siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise/.../...
+   $ firefox siNT_ER_E2_r3_chr21_fastqc.html

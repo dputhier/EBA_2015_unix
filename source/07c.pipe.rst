@@ -1,0 +1,16 @@
+Redirections
+============
+
+
+Que se passe-t-il maintenant si l'on souhaite visualiser exclusivement la ligne 29, en hommage au finistériens qui nous accueillent ? Nous allons devoir ici introduire une nouvelle notions, les redirections.
+
+Vision schématique d'un filtre Unix
+-----------------------------------
+
+
+Une large partie des commandes Unix peuvent être considérées comme des filtres. On peut se les représenter comme des éléments capables de réaliser une tâche sur un flux de texte (e.g le modifier). Pour faire cela elles sont capables de :
+
+* Lire via **l'entrée standard** (permet de lire du texte) 
+* D'écrire sur une **sortie standard**. Cette sortie standard est l'écran par
+  défaut comme nous avons pu le voir avec head et tail.
+* De
