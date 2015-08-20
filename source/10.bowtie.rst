@@ -2,13 +2,7 @@
 Aligner les reads
 =================
 
-Pour l'alignement, on utilise ici bowtie 1. Bowtie 1 nécessite un index. Les
-données seront alignées sur le génome hg19. Des index pour les génomes sont
-disponibles sur le site
-`iGenomes (illumina) <https://support.illumina.com/sequencing/sequencing_software/igenome.html>`_.
-Dans notre cas nous allons télécharger un index spécifique du chromosome 21
-humain. Une archive de fichiers compressées (hg19_chr21.tar.gz) au format
-*tar.gz se trouve à l'adresse:
+Pour l'alignement, on utilise ici bowtie 1. Bowtie 1 nécessite un index. Les données seront alignées sur le génome hg19. Des index pour les génomes sont disponibles sur le site `iGenomes (illumina) <https://support.illumina.com/sequencing/sequencing_software/igenome.html>`_. Dans notre cas nous allons télécharger un index spécifique du chromosome 21 humain. Une archive de fichiers compressées (hg19_chr21.tar.gz) au format *tar.gz se trouve à l'adresse:
 
 ::
 

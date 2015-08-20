@@ -14,23 +14,29 @@ suivante:
 
    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] fq1 fq2 fq3 ...
 
+Comme pour beaucoup de commande on peut obtenir une aide plus ou moins synthétique en utilisant l'argument -h.
+
+::
+
+   fastqc -h
+
+
 Ici nous souhaitons stocker le résultat de fastqc (un dossier contenant une page
 web) dans le dossier:
 
 ::
 
-   chipseq_tuto/fastqc/siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise
+   chipseq_tuto/fastqc
 
+.. admonition:: Exercice
+   :class: exo
+   
+   * A quoi correspond l'argument -o ./ dans la ligne suivante ?
 
-Nous devons tout d'abord créer le sous-dossier
-siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise  puis lancer fastqc:
-
-
-.. code-block:: bash 
-
-   $ cd ~/chipseq_tuto/fastqc
-   $ mkdir -p siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise
-   $ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq  
+   .. code-block:: bash 
+   
+      $ cd ~/chipseq_tuto/fastqc
+      $ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq  
    
 
 

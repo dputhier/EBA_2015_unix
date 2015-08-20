@@ -35,7 +35,7 @@ Contents
     dataset
     01.first_steps
     02.arbo.rst
-    03.deplacement
+    03.move
     04.mkdir.rst 
     05.lister.rst 
     06.download.rst
@@ -43,4 +43,6 @@ Contents
     07b.visualization.rst
     07c.pipe.rst
     08.fastqc.rst
+    09.sickle
+    10.bowtie
 

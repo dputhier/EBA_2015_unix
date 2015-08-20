@@ -37,8 +37,8 @@ Les commandes head et tail
 Les commandes head et tail permettent de visualiser les n premières lignes et n
 dernières lignes d'un fichier respectivement.
 
-
 :: 
+
    head [OPTION]... [FILE]...
    tail [OPTION]... [FILE]...
 

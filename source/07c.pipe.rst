@@ -2,7 +2,7 @@ Redirections
 ============
 
 
-Que se passe-t-il maintenant si l'on souhaite visualiser exclusivement la ligne 29, en hommage au finistériens qui nous accueillent ? Nous allons devoir ici introduire une nouvelle notions, les redirections.
+Que se passe-t-il maintenant si l'on souhaite visualiser exclusivement la ligne 29, en hommage au finistériens qui nous accueillent ? Pour ce faire on pourrait récupérer les 29 premières lignes du fichier avec la commande head puis demander à tail de prendre la dernière de cette liste. Nous allons devoir ici introduire une nouvelle notions, les redirections.
 
 Vision schématique d'un filtre Unix
 -----------------------------------
@@ -10,7 +10,16 @@ Vision schématique d'un filtre Unix
 
 Une large partie des commandes Unix peuvent être considérées comme des filtres. On peut se les représenter comme des éléments capables de réaliser une tâche sur un flux de texte (e.g le modifier). Pour faire cela elles sont capables de :
 
-* Lire via **l'entrée standard** (permet de lire du texte) 
-* D'écrire sur une **sortie standard**. Cette sortie standard est l'écran par
+ * Lire via **l'entrée standard** (STDIN). Permet de lire du texte.
+ 
+ * D'écrire sur une **sortie standard** (STDOUT). Cette sortie standard est l'écran par
   défaut comme nous avons pu le voir avec head et tail.
-* De
+
+ * D'écrire sur une **sortie d'erreur (STDERR)**. Permet de re-diriger les messages d'erreurs d'une commande dans un fichier.
+
+.. figure:: img/pipe.jpg
+   :scale: 50%
+   :align: center 
+   :alt: Pipe 
+
+   Vision schématique d'un enchaînement de commandes Unix.
