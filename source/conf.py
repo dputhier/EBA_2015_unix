@@ -134,6 +134,10 @@ html_theme = 'basicstrap'
 #  'inner_theme_name': 'bootswatch-simplex',
 #}
 
+html_theme_options = {
+    'sidebar_span': 3, # 1(min) - 12(max)
+}
+
 #html_theme_options = {
 #    'rightsidebar': True,
 #}
