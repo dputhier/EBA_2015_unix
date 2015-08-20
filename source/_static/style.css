@@ -2,10 +2,14 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 0px;
 }
 
+p {
+	font-size: 16px;
+}
 .fa-linux {
     color: #000;
 }
 
 a {
-    color: #EF8600;
+    color: #1C9D74;
 }
+

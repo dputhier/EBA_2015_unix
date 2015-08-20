@@ -5,6 +5,10 @@ __pycache__/
 # C extensions
 *.so
 
+# backup
+*~
+\#*
+
 # Distribution / packaging
 .Python
 env/
@@ -55,3 +59,4 @@ docs/_build/
 
 # PyBuilder
 target/
+

@@ -1,0 +1,33 @@
+
+
+Créer des répertoires 
+======================
+
+La commande mkdir 
+-----------------
+
+
+La commande **mkdir** peut être utilisée pour créer des répertoires. Cette commande prend comme argument le nom des répertoires que l'on souhaite créer. Par défaut, la commande refuse de créer un répertoire déja existant et renvoie un message d'erreur. Pour éviter ce message d'erreur, il faudra ajouter l'argument **-p**.
+   
+.. code-block:: bash
+
+   $ cd ~
+   $ mkdir chipseq_tuto
+   $ mkdir chipseq_tuto # refuse de créer un dossier déjà existant
+   $ mkdir -p chipseq_tuto # pas de message d'erreur (argument -p 
+   $ cd chipseq_tuto
+   $ mkdir raw_data
+   $ mkdir trimmed
+   $ mkdir fastqc
+   $ mkdir bam            
+   $ cd raw_data
+   $ pwd
+   $ cd 
+
+
+.. admonition::  Exercice
+   :class: exo 
+   
+   Visualisez les répertoires créés à l'aide du navigateur de fichier.
+
+ 

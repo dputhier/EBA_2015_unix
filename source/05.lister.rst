@@ -1,0 +1,64 @@
+
+
+Lister le contenu d'un répertoire 
+===================================
+
+La commande ls 
+--------------
+
+Pour connaître la **liste** des éléments présents dans un répertoire, on utilisera la commande **ls**.
+
+La commande ls accepte de nombreux arguments. Sa forme générale est la suivante:
+
+::
+
+   ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file/directory ...]
+
+.. note:: Dans les manuels d'aide UNIX, les arguments entre crochets sont considérés comme facultatifs. Dans le cas de ls, l'ensemble des arguments sont facultatifs, indiquant que l'on peut simplement écrire simplement 'ls'. Dans ce cas, on obtient la liste des fichiers présents dans le répertoire courant.
+
+La liste ci-dessous donne un certain nombre d'arguments classiques de ls:
+
+.. code-block:: bash 
+
+   -a liste tous ('all') les fichiers et dossiers (y compris les ceux qui sont cachés). 
+   -l En plus de la liste des fichiers, donne une information exhaustive sur ceux-ci ('long'). 
+   -t Trier les fichiers par date de modification ('time').
+   -r Inverse l'odre de tri ('reverse'). 
+   -R Lister de manière récursive (dossiers et sous-dossiers et sous-sous-dossiers...). 
+
+
+.. code-block:: bash
+
+   $ cd ~
+   $ ls # tous les arguments sont facultatifs.
+   $ ls -a # le dossier ~ contient de nombreux fichiers cachés.
+   $ ls -l -a 
+   $ ls -la # équivalent à ls -l -a
+   $ ls -rtl # classique.
+   $ ls chipseq_tuto # contient le dossier 'raw_data'.
+   $ ls chipseq_tuto/raw_data # ne contient rien pour l'instant.
+   $ ls / # les répertoires présents à la racine.
+
+.. important:: On écrit rarement la totalité des chemins. Sous UNIX/Linux on utilise la **complétion**. On tapera le début du chemin puis on appuiera une à deux fois sur la touche tabulation afin que le système propose des solutions. Notez qu'il en est de même pour les noms de commandes.
+
+.. code-block:: bash
+
+   $ cd ~
+   $ ls c # On appuie alors sur la touche tab (une à deux fois).
+   $ ls chipseq_tuto/r # On ajoute r et on appuie sur la touche tab (une à deux fois).
+
+Les opérateurs wilcard 
+-----------------------
+
+Ils permettent de désigner un ensemble de fichiers ou dossiers. L'opérateur le plus fréquent est l'étoile (*).
+
+Deux exemples ci-dessous pour illustrer.
+
+
+.. code-block:: bash 
+
+   $ cd ~ 
+   $ ls chipseq_tuto/*a* # l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et dont le nom contient un 'a'. 
+   $ ls chipseq_tuto/*m l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et finissant par un 'm'.
+
+

@@ -6,11 +6,11 @@ Accéder au bureau distant
 Créer une instance dans le cloud IFB 
 ------------------------------------
 
-Pour avoir un accès au bureau virtuel nous devons tout d'abord créer une instance de machine à l'IFB.
+Pour accéder au bureau virtuel nous devons tout d'abord créer une instance de machine à l'IFB.
 
 * Rendez vous sur la `page de login <http://tinyurl.com/owa7d29>`_.
 
-* Compléter le formulaire avec votre login et votre mot de passe.
+* Complétez le formulaire avec votre login et votre mot de passe.
 
 * Cliquez sur **new instance**.
 
@@ -23,8 +23,15 @@ Pour avoir un accès au bureau virtuel nous devons tout d'abord créer une insta
    * Cliquez sur **ssh** dans la colonne **access**. 
    * Dans **Parameters > host** copiez l'adresse IP.
 
-.. image:: img/ssh_con.jpg
 
+
+
+.. figure:: img/ssh_con.jpg 
+   :width: 200px 
+   :align: center 
+   :alt: Interface du site web de l'IFB.
+   
+   Interface du site web de l'IFB.
 
 Se connecter au bureau distant avec x2go 
 ----------------------------------------
@@ -33,7 +40,7 @@ Se connecter au bureau distant avec x2go
    * Démarrez **x2goclient**. 
    * Dans le menu de  **x2goclient** sélectionnez **Session > New session**. 
    * Indiquez **Unix_tuto** comme nom de session. 
-   * Coller **l'adresse IP** dans le champs **Host**. 
+   * Collez **l'adresse IP** dans le champs **Host**. 
    * Indiquez **root** pour le champs **login**. 
    * Sélectionnez **Try auto login (via SSH Agent or default SSH key)**.
    * Sélectionnez **MATE** pour **Session type**. 
@@ -41,7 +48,15 @@ Se connecter au bureau distant avec x2go
    * **Double-cliquez** sur la session nouvellement créée pour la démarrer. 
 
 
-.. image:: img/x2go.jpg
+.. figure:: img/x2go.jpg
+   :width: 200px
+   :align: center
+   :alt: Interface du logiciel X2GO (Mac OSX).
+      
+   Interface du logiciel X2GO (Mac OSX).
+
+
+   
 
 
 

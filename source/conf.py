@@ -37,7 +37,8 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'sphinxcontrib.programoutput'
+    'sphinxcontrib.programoutput',
+    'sphinxjp.themes.basicstrap'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -117,22 +118,9 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'nature'
+#html_theme = 'nature'
 
-# import alabaster
-
-# html_theme_path = [alabaster.get_path()]
-# extensions = ['alabaster']
-# html_theme = 'alabaster'
-# html_sidebars = {
-#     '**': [
-#         'about.html',
-#         'navigation.html',
-#         'relations.html',
-#         'searchbox.html',
-#         'donate.html',
-#     ]
-# }
+html_theme = 'basicstrap'
 
 #html_theme='sphinx_rtd_theme'
 
@@ -141,8 +129,17 @@ html_theme = 'nature'
 # documentation.
 #html_theme_options = {}
 
+#html_theme_options = {
+#  'inner_theme': True,
+#  'inner_theme_name': 'bootswatch-simplex',
+#}
+
+#html_theme_options = {
+#    'rightsidebar': True,
+#}
+
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = ['_templates']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".

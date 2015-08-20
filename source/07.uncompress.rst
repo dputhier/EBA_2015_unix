@@ -1,0 +1,21 @@
+
+Décompression 
+==============
+
+La commande gunzip 
+------------------
+
+
+La commande **gunzip** permet de **décompresser** un fichier au **format *.gz**. Sa syntaxe générale est la suivante:
+
+::
+
+   gunzip [-cfhkLNqrtVv] [-S suffix] file [file [...]]
+
+Ici si nous souhaitons décompresser notre fichier nous pouvons donc écrire:
+
+.. code-block:: bash
+
+   $ cd ~/chipseq_tuto/raw_data
+   $ gunzip *.gz # ou gunzip siNT_ER_E2_r3_SRX176860_chr21_0.6_Noise.fastq.gz
+

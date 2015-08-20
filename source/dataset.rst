@@ -1,8 +1,9 @@
 
-The dataset
-============
+Le jeu de données 
+=================
 
-The Chip-Seq dataset that will be used throughout this tutorial has been described during the "ChIP-Seq session". More information can be obtained `here <http://morganetc.github.io/atelier_chip-seq_roscoff_2014/>`_.
+
+Le jeu de données utilisé dans cette session a été décrit dans la session ChIP-Se. Vous obtiendrez plus d'informations à l'adresse suivante: `here <http://morganetc.github.io/atelier_chip-seq_roscoff_2014/>`_.
 
 
 

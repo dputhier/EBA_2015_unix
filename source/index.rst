@@ -6,11 +6,6 @@
 
  ::
 
-   
-   
-
-
-
 
 
 Ecole bioinformatique AVIESAN - Roscoff 2015 :fonticon:`fa fa-linux  fa-large`
@@ -32,12 +27,18 @@ Contents
 
 
 
-.. toctree:: 
-   :maxdepth: 1
-
-   installations
-   connection
-   dataset
-   first_steps
+ .. toctree:: 
+    :maxdepth: 1
  
+    installations
+    connection
+    dataset
+    01.first_steps
+    02.arbo.rst
+    03.deplacement
+    04.mkdir.rst 
+    05.lister.rst 
+    06.download.rst
+    07.uncompress.rst
+    08.fastqc.rst
 
