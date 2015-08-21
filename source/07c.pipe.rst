@@ -12,7 +12,7 @@ Une large partie des commandes Unix peuvent être considérées comme des filtre
 
  * Lire via **l'entrée standard** (STDIN). Permet de lire du texte.
  * D'écrire sur une **sortie standard** (STDOUT). Cette sortie standard est l'écran par défaut comme nous avons pu le voir avec head et tail.
- * D'écrire sur une **sortie d'erreur (STDERR)**. Permet de re-diriger les messages d'erreurs d'une commande dans un fichier.
+ * D'écrire sur une **sortie d'erreur (STDERR)**. Permet de re-diriger les messages d'erreurs d'une commande dans un fichier. Certaine commandes utilisent aussi cette sortie pour écrire des informations durant le déroulement du programme. 
 
 
 Etant donné que c'est commande peuvent lire et écrire un flux de texte on devrait donc pouvoir les chaîner.
@@ -41,7 +41,6 @@ L'opérateur permettant de chaîner des commandes est le tube ('pipe'). On pourr
    
 Voilà nous avons tous les ingrédients pour récupérer la lignes 29 (je mesure d'ici l'allégresse de nos hôtes). 
 
-
 .. admonition:: Exercice (hommage au finistère)
    :class: exo
    
@@ -56,21 +55,20 @@ Voilà nous avons tous les ingrédients pour récupérer la lignes 29 (je mesure
    
    * Ecrivez une commande qui permet de récupérer les 51 premières lignes du fichier et de les regarder avec la commande less.
  
- 
+   .. code-block:: bash
+   
+      $ head -n 51 siNT_ER_E2_r3_chr21.fastq | less 
+
+
 Autres opérateurs de redirection
 --------------------------------
 
-On a pas toujours envie de renvoyer le flux de texte dans un commande. Parfois on souhaite renvoyer le résultat dans un fichier afin de saugarder un résultat. On dispose alors des opérateurs suivants:
+On a pas toujours envie de renvoyer le flux de texte dans un commande. Parfois on souhaite renvoyer le flux de texte dans un fichier afin de saugarder un résultat. On dispose alors des opérateurs suivants:
 
  .. code-block:: bash
    
    * > filename # redirige dans le fichier filename (et écrase se fichier si il existait) 
    * >> filename # ajoute des lignes dans le fichier filename (en le créant si il n'existait pas)
    * 2> filename # redirige l'erreur standard dans un fichier nommé filename.
-   * &> filename # redirige l'erreur standard et la sortie standard dans un fichier nommé filename. 
+   * &> filename # redirige la sortie standard et l'erreur standard dans un seul et même fichier nommé filename. 
    
-   
-          
-         
-
-

@@ -48,9 +48,19 @@ Par conséquent notre commande devient:
 
 .. code-block:: bash
 
-    $ cd ~/chipseq_tuto/raw_data/
+    $ cd ~/chipseq_tuto/raw_data
     $ sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20
 
-    
+.. admonition:: Exercice
+   :class: exo
+   
+   * Faites le même exercice en renvoyant l'erreur standard de sickle dans un fichier nommé sickle.log qui devra se trouver dans le dossier log.
+   * Que contient le fichier ?
+
+   .. code-block:: bash 
+   
+      $ ~/chipseq_tuto/raw_data
+      $ sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20 2> ../log/sickle.log
+      $ less ../log/sickle.log
 
 

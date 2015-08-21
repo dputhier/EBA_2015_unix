@@ -37,7 +37,8 @@ Contents
     02.arbo.rst
     03.move
     04.mkdir.rst 
-    05.lister.rst 
+    05.lister.rst
+    05b.help
     06.download.rst
     07.uncompress.rst
     07b.visualization.rst
@@ -45,4 +46,5 @@ Contents
     08.fastqc.rst
     09.sickle
     10.bowtie
+    11.script.rst
 

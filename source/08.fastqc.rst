@@ -26,7 +26,7 @@ web) dans le dossier:
 
 ::
 
-   chipseq_tuto/fastqc
+   ~/chipseq_tuto/fastqc
 
 .. admonition:: Exercice
    :class: exo
@@ -36,7 +36,8 @@ web) dans le dossier:
    .. code-block:: bash 
    
       $ cd ~/chipseq_tuto/fastqc
-      $ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq  
+      $ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq
+      $ ls  
    
 
 
@@ -45,3 +46,18 @@ Pour visualiser le résultat on peut directement demander à firefox de l'ouvrir
 .. code-block:: bash
 
    $ firefox siNT_ER_E2_r3_chr21_fastqc.html
+
+
+.. admonition:: Exercice
+   :class: exo
+   
+   * Faites le même exercice en renvoyant l'erreur standard de fastqc dans un fichier nommé fastq.log qui devra se trouver dans le dossier log.
+   * Que contient le fichier ?
+
+   .. code-block:: bash 
+   
+      $ cd ~/chipseq_tuto/fastqc
+      $ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq 2> ../log/fastqc.log
+      $ less ../log/fastqc.log
+
+      

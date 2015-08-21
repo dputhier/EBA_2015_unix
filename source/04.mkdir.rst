@@ -24,6 +24,7 @@ l'argument **-p**.
    $ mkdir trimmed
    $ mkdir fastqc
    $ mkdir bam
+   $ mkdir log
    $ mkdir index          
    $ cd raw_data
    $ pwd
