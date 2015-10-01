@@ -4,4 +4,4 @@ IN PROGRESS
 
 Unix tutorial (Ecole de bioinformatique AVIESAN)
 
-This repository contains the pedagogic material related to the course "Introduction to Unix" proposed by Matthieu Defrance and Denis Puthier in the context of the Ecole de bioinformatique AVIESAN. 
+This repository contains the pedagogic material related to the course "Introduction to Unix" proposed by Matthieu Defrance, Stéphanie Le Gras and Denis Puthier in the context of the Ecole de bioinformatique AVIESAN. 
