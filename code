@@ -1,0 +1,77 @@
+ cd / # On se déplace à la racine 
+ cd /usr/ # On se déplace dans le répertoire usr présent à la racine 
+ cd /usr/local # On se déplace dans le répertoire usr qui contient un répertoire nommé local 
+ cd /usr/local/bin # On se déplace dans le répertoire usr qui contient un répertoire nommé local qui lui même contient un répertoire nommé bin. 
+ cd / # On se déplace à la racine 
+ pwd # Le répertoire courant a changé.
+ cd / 
+ pwd 
+ cd ~
+ pwd 
+ cd ~
+ mkdir chipseq_tuto
+ mkdir chipseq_tuto # refuse de créer un dossier déjà existant
+ mkdir -p chipseq_tuto # pas de message d'erreur (argument -p 
+ cd chipseq_tuto
+ mkdir raw_data
+ mkdir trimmed
+ mkdir fastqc
+ mkdir bam
+ mkdir log
+ mkdir index          
+ cd raw_data
+ pwd
+ cd 
+ cd ~
+ ls # tous les arguments sont facultatifs.
+ ls -a # le dossier ~ contient de nombreux fichiers cachés.
+ ls -l -a 
+ ls -la # équivalent à ls -l -a
+ ls -rtl # classique.
+ ls chipseq_tuto # contient le dossier 'raw_data'.
+ ls chipseq_tuto/raw_data # ne contient rien pour l'instant.
+ ls / # les répertoires présents à la racine.
+ cd ~
+ ls c # On appuie alors sur la touche tab (une à deux fois).
+ ls chipseq_tuto/r # On ajoute r et on appuie sur la touche tab (une à deux fois).
+ cd ~ 
+ ls chipseq_tuto/*a* # l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et dont le nom contient un 'a'. 
+ ls chipseq_tuto/*m* # l'ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et finissant par un 'm'.
+ cd ~/chipseq_tuto/raw_data
+ pwd
+ wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/siNT_ER_E2_r3_chr21.fastq.gz
+ ls
+ cd ~/chipseq_tuto/raw_data
+ gunzip *.gz # ou gunzip siNT_ER_E2_r3_chr21.fastq.gz
+ ls
+ cd ~/chipseq_tuto/fastqc
+ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq
+ ls  
+ firefox siNT_ER_E2_r3_chr21_fastqc.html
+ cd ~/chipseq_tuto/fastqc
+ fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq 2> ../log/fastqc.log
+ less ../log/fastqc.log
+ sickle 
+ sickle se Usage: sickle se  -f <fastq sequence file>  -t <quality
+ cd ~/chipseq_tuto/raw_data
+ sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20
+ ~/chipseq_tuto/raw_data
+ sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20 2> ../log/sickle.log
+ less ../log/sickle.log
+ cd ~/chipseq_tuto/index
+ wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/hg19_chr21.tar.gz
+ tar xvfz hg19_chr21.tar.gz
+ ls
+ cd ~/chipseq_tuto/bam
+ bowtie -p 2 -m 1 -S ../index/hg19_chr21 ../trimmed/siNT_ER_E2_r3_chr21.fastq > siNT_ER_E2_r3_chr21.sam 2> ../log/bowtie.log
+ less siNT_ER_E2_r3_chr21.sam
+ less siNT_ER_E2_r3_chr21.sam
+ less ../log/bowtie.log
+ samtools
+ samtools view -h
+ samtools view -bSh -o siNT_ER_E2_r3_chr21.bam siNT_ER_E2_r3_chr21.sam
+ samtools sort siNT_ER_E2_r3_chr21.bam siNT_ER_E2_r3_chr21_sorted
+ ls
+ samtools index siNT_ER_E2_r3_chr21_sorted.bam
+ rm siNT_ER_E2_r3_chr21.bam
+ rm siNT_ER_E2_r3.sam

@@ -1,0 +1,142 @@
+Ecrire un script BASH
+=====================
+
+Les commandes que nous avons manipulé jusqu'ici vont nous permettre d'écrire un script permettant l'automatisation de ce traitement:
+
+Voilà en quelques lignes les opérations que nous avons réalisées:
+
+
+.. code-block:: bash
+
+   # Créer des répertoires de travail
+   cd ~
+   mkdir -p projet_roscoff
+   cd projet_roscoff
+   mkdir -p raw_data
+   mkdir -p trimmed
+   mkdir -p fastqc
+   mkdir -p bam
+   mkdir -p log
+   mkdir -p index          
+   
+   # Télécharger les données
+   cd raw_data
+   wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/siNT_ER_E2_r3_chr21.fastq.gz
+   
+   # Décompresser les données
+   gunzip *.gz # ou gunzip siNT_ER_E2_r3_chr21.fastq.gz
+   
+   # Faire un contrôle qualité sur les données
+   cd ~/projet_roscoff/fastqc
+   fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq 2> ../log/fastqc.log
+   
+   # Rogner les reads
+   cd ~/projet_roscoff/raw_data
+   sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20 2> ../log/sickle.log
+   
+   # Aligner les reads.
+   cd ~/projet_roscoff/bam
+   bowtie -p 2 -m 1 -S ../index/hg19_chr21 ../trimmed/siNT_ER_E2_r3_chr21.fastq > siNT_ER_E2_r3_chr21.sam 2> ../log/bowtie.log
+   samtools view -bSh -o siNT_ER_E2_r3_chr21.bam siNT_ER_E2_r3_chr21.sam
+   samtools sort siNT_ER_E2_r3_chr21.bam siNT_ER_E2_r3_chr21_sorted
+   samtools index siNT_ER_E2_r3_chr21_sorted.bam
+
+
+Nous avons un **nouvel échantillon**, le contrôle (**MCF_input_r3_chr21.fastq.gz**). Il est localisé dans le même dossier, sur internet:
+
+::
+
+   http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/siNT_ER_E2_r3_chr21.fastq.gz
+   
+On peut bien sur remplacer toutes les occurrences de siNT_ER_E2_r3_chr21 par MCF_input_r3_chr21. Une solution plus pratique est d'utiliser une **variable**. Cette variable s'appellera **SAMPLE**. On indiquera avant de lancer les commandes, la valeur de celle-ci:
+On peut utiliser la commande **echo** afin d'afficher** le contenu de la variable. On fait référence à la variable en la préfixant avec le caractère $ ou en la préfixant avec le caractère $ et en l'entourant d'accolades.
+
+.. code-block:: bash
+
+   $ SAMPLE="MCF_input_r3_chr21"
+   $ echo $SAMPLE 
+   $ echo ${SAMPLE}
+   
+Afin de pouvoir éventuellement par la suite traiter de nouveaux échantillons, nous allons stocker notre code dans un fichier. 
+Ouvrer l'éditeur **kate** et mettez le en plein écran.
+
+Afin d'indiquer au système d'utiliser le programme **BASH** pour interprété notre code nous allons utiliser une ligne de code dénommée "Shebang". Elle indique que le code doit être interprété (#!) par un utilitaire, bash, se trouvant dans le dossier /bin. Ca donne:
+
+:: 
+
+   #!/bin/bash
+
+
+Le code complet devient:
+
+::
+
+   #!/bin/bash 
+   
+   SAMPLE="MCF_input_r3_chr21"
+
+   # Créer des répertoires de travail
+   cd ~
+   mkdir -p projet_roscoff
+   cd projet_roscoff
+   mkdir -p raw_data
+   mkdir -p trimmed
+   mkdir -p fastqc
+   mkdir -p bam
+   mkdir -p log
+   mkdir -p index          
+   
+   # Télécharger les données
+   cd raw_data
+   wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/${SAMPLE}.fastq.gz
+   
+   # Décompresser les données
+   gunzip *.gz # ou gunzip ${SAMPLE}.fastq.gz
+   
+   # Faire un contrôle qualité sur les données
+   cd ~/projet_roscoff/fastqc
+   fastqc -f fastq -o ./  ../raw_data/${SAMPLE}.fastq 2> ../log/fastqc.log
+   
+   # Rogner les reads
+   cd ~/projet_roscoff/raw_data
+   sickle se  -f ${SAMPLE}.fastq -t sanger -o ../trimmed/${SAMPLE}.fastq -q 20 -l 20 2> ../log/sickle.log
+   
+   # Aligner les reads.
+   cd ~/projet_roscoff/bam
+   bowtie -p 2 -m 1 -S ../index/hg19_chr21 ../trimmed/${SAMPLE}.fastq > ${SAMPLE}.sam 2> ../log/bowtie.log
+   samtools view -bSh -o ${SAMPLE}.bam ${SAMPLE}.sam
+   samtools sort ${SAMPLE}.bam ${SAMPLE}_sorted
+   samtools index ${SAMPLE}_sorted.bam
+
+
+Sauvegardez ce code  dans un fichier nommé "script_tuto_unix.sh" que vous placerez dans répertoire  ~/projet_roscoff.
+
+Dans le menu kate selectionnez **Settings > Configure Kate > Plugins > terminal tool view**. Cliquez sur OK. En bas de la fenêtre vous verrez une icone correspondant au terminal, cliquez dessus.
+Via ce nouveau terminal, déplacez vous dans le dossier ~/projet_roscoff
+
+.. code-block:: bash
+
+   $ cd ~/projet_roscoff
+   
+Vous dévriez voir le fichier "script_tuto_unix.sh".
+
+.. code-block:: bash
+
+   $ ls 
+   
+Nous devons demander au système d'executer ce fichier. Par défaut, c'est interdit. Il faut changer les droits associer au fichier. Pour se faire nous allons utiliser la commande **chmod** pour ajouter (**+**) des droits d'exécution (**x**) à l'utilisateur (**u**) à qui appartient ce fichier (vous):
+
+
+.. code-block:: bash
+
+   $ chmod u+x script_tuto_unix.sh
+   
+   
+Ensuite, il nous reste à lancer le script en indiquant au système d'interpréter le code qui se trouve dans le fichier 'script_tuto_unix.sh' présent dans **le répertoire courant (./)**. 
+
+.. code-block:: bash
+
+   $ ./script_tuto_unix.sh
+
+
+   

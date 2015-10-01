@@ -1,0 +1,7 @@
+body {
+    background-color: black;
+    color: white;
+}
+div.document {
+    background-color: black;
+}

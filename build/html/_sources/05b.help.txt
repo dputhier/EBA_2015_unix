@@ -1,0 +1,40 @@
+Obtenir de l'aide
+=================
+
+Pour obtenir de l'aide sur une commande, on peut utiliser la commande **man** (manuel). 
+
+ * La **section NAME** contient le nom et le but de la commande. 
+ * La **section SYNOPSIS** contient généralement la liste des argument possible (les arguments entre crochet, '[', sont facultatifs.
+ * La **section DESCRIPTION** contient la liste des arguments et leurs effets. On notera que l'argument -a de ls a aussi nue version longue (--all). L'intérêt de la version longue est qu'elle est plus explicite. Ceci peut être intéressant lorsqu'on relit du code.
+ * On utilisera les **flêches haut et bas** du clavier pour se déplacer dans l'aide.
+ * La **recherche** dans l'aide s'effectue en tapant le **caractère '/'** suivi du terme à rechercher (e.g /-a). On tapera 'n' pour la prochaine occurence (next) et 'p' (previous) pour l'occurence précédente. 
+ * On utilise la touche **q pour sortir** de l'aide.
+
+.. code-block:: bash
+
+   $ man ls
+   
+   NAME
+       ls - list directory contents
+
+   SYNOPSIS
+          ls [OPTION]... [FILE]...
+   
+   DESCRIPTION
+          List information about the FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+   
+          Mandatory arguments to long options are mandatory for short options too.
+   
+          -a, --all
+                 do not ignore entries starting with .
+   
+          -A, --almost-all
+                 do not list implied . and ...
+
+   
+Sur de nombreuses commandes unix on pourra utiliser l'argument **-h** ou **--help** pour obtenir de l'aide.
+
+.. code-block:: bash
+
+   $ man -h
+

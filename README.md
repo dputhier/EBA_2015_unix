@@ -1,2 +1,7 @@
-# EBA_2015_unix
-Web site for the Unix Tutorial (Ecole de bioinformatique AVIESAN)
+# roscoff_unix_2015
+
+IN PROGRESS
+
+Unix tutorial (Ecole de bioinformatique AVIESAN)
+
+This repository contains the pedagogic material related to the course "Introduction to Unix" proposed by Matthieu Defrance, Stéphanie Le Gras and Denis Puthier in the context of the Ecole de bioinformatique AVIESAN. 

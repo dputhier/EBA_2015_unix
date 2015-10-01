@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Rogner les reads &mdash; AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="top" title="AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation" href="index.html" />
+    <link rel="next" title="Aligner les reads" href="10.bowtie.html" />
+    <link rel="prev" title="Analyser la qualité avec fastqc" href="08.fastqc.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Rogner les reads</a><ul>
+<li><a class="reference internal" href="#la-commande-sickle">La commande sickle</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="08.fastqc.html" title="Analyser la qualité avec fastqc" accesskey="P">previous </a></li>
+              <li><a href="10.bowtie.html" title="Aligner les reads" accesskey="N">next </a></li>
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Rogner les reads</a><ul>
+<li><a class="reference internal" href="#la-commande-sickle">La commande sickle</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="08.fastqc.html"
+                        title="previous chapter">Analyser la qualité avec fastqc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="10.bowtie.html"
+                        title="next chapter">Aligner les reads</a></p>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="rogner-les-reads">
+<h1>Rogner les reads<a class="headerlink" href="#rogner-les-reads" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="la-commande-sickle">
+<h2>La commande sickle<a class="headerlink" href="#la-commande-sickle" title="Permalink to this headline">¶</a></h2>
+<p>Cette commande va nous permettre de trimmer les reads. Ici nous travaillons avec
+des données &#8216;single-end&#8217; nous travaillerons donc avec &#8216;sickle se&#8217; (voir &#8216;sickle
+pe&#8217; pour le paired-end). Les arguments de sickle sont les suivants:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sickle
+
+Usage: sickle &lt;<span class="nb">command</span>&gt; <span class="o">[</span>options<span class="o">]</span>
+
+Command:
+pe  paired-end sequence trimming
+se  single-end sequence trimming
+
+--help, display this <span class="nb">help </span>and <span class="nb">exit</span>
+--version, output version information and <span class="nb">exit</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sickle se Usage: sickle se  -f &lt;fastq sequence file&gt;  -t &lt;quality
+<span class="nb">type</span>&gt; -o &lt;trimmed fastq file&gt;
+
+Options:
+-f, --fastq-file, Input fastq file <span class="o">(</span>required<span class="o">)</span>
+-t, --qual-type, Type of quality values <span class="o">(</span>solexa <span class="o">(</span>CASAVA &lt; 1.3<span class="o">)</span>,
+illumina <span class="o">(</span>CASAVA 1.3 to 1.7<span class="o">)</span>, sanger <span class="o">(</span>which is CASAVA &gt;<span class="o">=</span> 1.8<span class="o">))</span> <span class="o">(</span>required<span class="o">)</span>
+-o, --output-file, Output trimmed fastq file <span class="o">(</span>required<span class="o">)</span>
+-q, --qual-threshold, Threshold <span class="k">for</span> trimming based on average quality in a
+window. Default 20.
+-l, --length-threshold, Threshold to keep a <span class="nb">read </span>based
+on length after trimming. Default 20.
+-x, --no-fiveprime, Don<span class="s1">&#39;t do five prime trimming.</span>
+<span class="s1">-n, --discard-n, Discard sequences with any Ns in them.</span>
+<span class="s1">--quiet, Don&#39;</span>t print out any trimming information
+--help, display this <span class="nb">help </span>and <span class="nb">exit</span>
+--version, output version information and <span class="nb">exit</span>
+</pre></div>
+</div>
+<p>Par conséquent notre commande devient:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/projet_roscoff/raw_data
+<span class="nv">$ </span>sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q <span class="m">20</span> -l 20
+</pre></div>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Faites le même exercice en renvoyant l&#8217;erreur standard de sickle dans un fichier nommé sickle.log qui devra se trouver dans le dossier log.</li>
+<li>Que contient le fichier ?</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>~/projet_roscoff/raw_data
+<span class="nv">$ </span>sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q <span class="m">20</span> -l <span class="m">20</span> 2&gt; ../log/sickle.log
+<span class="nv">$ </span>less ../log/sickle.log
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="08.fastqc.html" title="Analyser la qualité avec fastqc" >previous</a></li>
+        <li><a href="10.bowtie.html" title="Aligner les reads" >next</a></li>
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2015, Denis Puthier and Matthieu Defrance.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Lister le contenu d’un répertoire &mdash; AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="top" title="AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Lister le contenu d&#8217;un répertoire</a><ul>
+<li><a class="reference internal" href="#la-commande-ls">La commande ls</a></li>
+<li><a class="reference internal" href="#les-operateurs-wilcard">Les opérateurs wilcard</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Lister le contenu d&#8217;un répertoire</a><ul>
+<li><a class="reference internal" href="#la-commande-ls">La commande ls</a></li>
+<li><a class="reference internal" href="#les-operateurs-wilcard">Les opérateurs wilcard</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="lister-le-contenu-d-un-repertoire">
+<h1>Lister le contenu d&#8217;un répertoire<a class="headerlink" href="#lister-le-contenu-d-un-repertoire" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="la-commande-ls">
+<h2>La commande ls<a class="headerlink" href="#la-commande-ls" title="Permalink to this headline">¶</a></h2>
+<p>Pour connaître la <strong>liste</strong> des éléments présents dans un répertoire, on utilisera la commande <strong>ls</strong>.</p>
+<p>La commande ls accepte de nombreux arguments. Sa forme générale est la suivante:</p>
+<div class="highlight-python"><div class="highlight"><pre>ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file/directory ...]
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Dans les manuels d&#8217;aide UNIX, les arguments entre crochets sont considérés comme facultatifs. Dans le cas de ls, l&#8217;ensemble des arguments sont facultatifs, indiquant que l&#8217;on peut simplement écrire simplement &#8216;ls&#8217;. Dans ce cas, on obtient la liste des fichiers présents dans le répertoire courant.</p>
+</div>
+<p>La liste ci-dessous donne un certain nombre d&#8217;arguments classiques de ls:</p>
+<div class="highlight-bash"><div class="highlight"><pre>-a liste tous (&#39;all&#39;) les fichiers et dossiers (y compris les ceux qui sont cachés).
+-l En plus de la liste des fichiers, donne une information exhaustive sur ceux-ci (&#39;long&#39;).
+-t Trier les fichiers par date de modification (&#39;time&#39;).
+-r Inverse l&#39;odre de tri (&#39;reverse&#39;).
+-R Lister de manière récursive (dossiers et sous-dossiers et sous-sous-dossiers...).
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>ls <span class="c"># tous les arguments sont facultatifs.</span>
+<span class="nv">$ </span>ls -a <span class="c"># le dossier ~ contient de nombreux fichiers cachés.</span>
+<span class="nv">$ </span>ls -l -a
+<span class="nv">$ </span>ls -la <span class="c"># équivalent à ls -l -a</span>
+<span class="nv">$ </span>ls -rtl <span class="c"># classique.</span>
+<span class="nv">$ </span>ls projet_roscoff <span class="c"># contient le dossier &#39;raw_data&#39;.</span>
+<span class="nv">$ </span>ls projet_roscoff/raw_data <span class="c"># ne contient rien pour l&#39;instant.</span>
+<span class="nv">$ </span>ls / <span class="c"># les répertoires présents à la racine.</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">On écrit rarement la totalité des chemins. Sous UNIX/Linux on utilise la <strong>complétion</strong>. On tapera le début du chemin puis on appuiera une à deux fois sur la touche tabulation afin que le système propose des solutions. Notez qu&#8217;il en est de même pour les noms de commandes.</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>ls c <span class="c"># On appuie alors sur la touche tab (une à deux fois).</span>
+<span class="nv">$ </span>ls projet_roscoff/r <span class="c"># On ajoute r et on appuie sur la touche tab (une à deux fois).</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-operateurs-wilcard">
+<h2>Les opérateurs wilcard<a class="headerlink" href="#les-operateurs-wilcard" title="Permalink to this headline">¶</a></h2>
+<p>Ils permettent de désigner un ensemble de fichiers ou dossiers. L&#8217;opérateur le plus fréquent est l&#8217;étoile (*).</p>
+<p>Deux exemples ci-dessous pour illustrer.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>ls projet_roscoff/*a* <span class="c"># l&#39;ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et dont le nom contient un &#39;a&#39;.</span>
+<span class="nv">$ </span>ls projet_roscoff/*m* <span class="c"># l&#39;ensemble des fichiers et dossiers présents dans le dossier chipseq_tuto et finissant par un &#39;m&#39;.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2015, Denis Puthier and Matthieu Defrance.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

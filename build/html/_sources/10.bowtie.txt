@@ -1,0 +1,122 @@
+
+Aligner les reads
+=================
+
+Télécharger l'index
+-------------------
+
+Pour l'alignement, on utilise ici bowtie 1. Bowtie 1 nécessite un index. Les données seront alignées sur le génome hg19. Des index pour les génomes sont disponibles sur le site `iGenomes (illumina) <https://support.illumina.com/sequencing/sequencing_software/igenome.html>`_. Dans notre cas nous allons télécharger un index spécifique du chromosome 21 humain. Une archive de fichiers compressées (hg19_chr21.tar.gz) au format tar.gz se trouve à l'adresse:
+
+::
+
+   http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/hg19_chr21.tar.gz
+
+
+.. admonition:: Exercice :
+   :class: exo
+
+   * Déplacez vous dans le répertoire ~/projet_roscoff/index. Téléchargez le fichier hg19_chr21.tar.gz.
+
+   .. code-block:: bash
+
+      $ cd ~/projet_roscoff/index
+      $ wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/hg19_chr21.tar.gz
+   
+   * Décompressez le fichier avec l'utilitaire **tar**.
+   
+      * x eXtraire
+      * v Verbose (en parlant)
+      * f Force (effacer les fichiers pré-existants)
+      * z Décompresser avec gunzip
+   
+   .. code-block:: bash
+
+      $ tar xvfz hg19_chr21.tar.gz
+   
+   * Vérifiez la décompression avec la commande ls
+   
+   .. code-block:: bash
+
+      $ ls
+    
+
+Lancer l'alignement avec Bowtie 1
+---------------------------------
+
+Utilisez la commande ci-dessous pour lancer l'alignement. On indique à bowtie de travailler avec 2 processeurs (-p 2) de rejeter tous read avec plus d'un alignement.
+
+
+.. code-block:: bash
+
+   $ cd ~/projet_roscoff/bam
+   $ bowtie -p 2 -m 1 -S ../index/hg19_chr21 ../trimmed/siNT_ER_E2_r3_chr21.fastq > siNT_ER_E2_r3_chr21.sam 2> ../log/bowtie.log
+   $ less siNT_ER_E2_r3_chr21.sam
+
+
+.. admonition:: Exercice :
+   :class: exo
+
+   * Utilisez less pour regarder le contenu du fichier SAM (siNT_ER_E2_r3_chr21.sam) et du fichier de log (bowtie.log).
+   
+   .. code-block:: bash
+   
+      $ less siNT_ER_E2_r3_chr21.sam
+      $ less ../log/bowtie.log
+
+   .. code-block:: bash 
+
+   
+
+Convertir le SAM en BAM
+-----------------------
+
+Il faut utiliser la commande samtools :
+
+.. admonition:: Exercice :
+   :class: exo
+
+   * Demandez de l'aide sur la commande samtools.
+   
+   .. code-block:: bash
+
+      $ samtools
+      
+   * Demandez de l'aide sur la commande samtools view.
+   
+   .. code-block:: bash
+
+      $ samtools view -h
+   
+   
+On souhaite demander à samtools de produire un format BAM (-b) à partir d'un format SAM (-S) tout en conservant l'entête du fichier SAM (-h). On aimerait qu'il écrive (-o, output) dans un fichier nommé siNT_ER_E2_r3_chr21.bam. 
+
+.. admonition:: Exercice :
+   :class: exo
+
+   * Ecrivez la commande.
+   
+   .. code-block:: bash
+
+      $ samtools view -bSh -o siNT_ER_E2_r3_chr21.bam siNT_ER_E2_r3_chr21.sam
+
+
+On souhaite maintenant trier le fichier par coordonnées génomiques et indexer le fichier.
+
+On écrit:
+
+.. code-block:: bash
+
+   $ samtools sort siNT_ER_E2_r3_chr21.bam siNT_ER_E2_r3_chr21_sorted
+   $ ls
+   $ samtools index siNT_ER_E2_r3_chr21_sorted.bam
+   
+On souhaite déléter le fichier sam, on utilise la commande rm (ReMove):
+
+.. code-block:: bash
+
+   $ rm siNT_ER_E2_r3_chr21.bam
+   $ rm siNT_ER_E2_r3.sam
+
+
+Voilà, nos reads sont alignés.
+      

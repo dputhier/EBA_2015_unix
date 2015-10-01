@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Analyser la qualité avec fastqc &mdash; AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="top" title="AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation" href="index.html" />
+    <link rel="next" title="Rogner les reads" href="09.sickle.html" />
+    <link rel="prev" title="Décompression" href="07.uncompress.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Analyser la qualité avec fastqc</a><ul>
+<li><a class="reference internal" href="#la-commande-fastqc">La commande fastqc</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="07.uncompress.html" title="Décompression" accesskey="P">previous </a></li>
+              <li><a href="09.sickle.html" title="Rogner les reads" accesskey="N">next </a></li>
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Analyser la qualité avec fastqc</a><ul>
+<li><a class="reference internal" href="#la-commande-fastqc">La commande fastqc</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="07.uncompress.html"
+                        title="previous chapter">Décompression</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="09.sickle.html"
+                        title="next chapter">Rogner les reads</a></p>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="analyser-la-qualite-avec-fastqc">
+<h1>Analyser la qualité avec fastqc<a class="headerlink" href="#analyser-la-qualite-avec-fastqc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="la-commande-fastqc">
+<h2>La commande fastqc<a class="headerlink" href="#la-commande-fastqc" title="Permalink to this headline">¶</a></h2>
+<p>On peut utiliser la commande fastqc pour analyser la qualité des reads. Il
+faudra lui fournir un certain nombre d&#8217;arguments. La syntaxe générale est la
+suivante:</p>
+<div class="highlight-python"><div class="highlight"><pre>fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] fq1 fq2 fq3 ...
+</pre></div>
+</div>
+<p>Comme pour beaucoup de commande on peut obtenir une aide plus ou moins synthétique en utilisant l&#8217;argument -h.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fastqc</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>Ici nous souhaitons stocker le résultat de fastqc (un dossier contenant une page
+web) dans le dossier:</p>
+<div class="highlight-python"><div class="highlight"><pre>~/projet_roscoff/fastqc
+</pre></div>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>A quoi correspond l&#8217;argument -o ./ dans la ligne suivante ?</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/projet_roscoff/fastqc
+<span class="nv">$ </span>fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq
+<span class="nv">$ </span>ls
+</pre></div>
+</div>
+</div>
+<p>Pour visualiser le résultat on peut directement demander à firefox de l&#8217;ouvrir:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>firefox siNT_ER_E2_r3_chr21_fastqc.html
+</pre></div>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Faites le même exercice en renvoyant l&#8217;erreur standard de fastqc dans un fichier nommé fastq.log qui devra se trouver dans le dossier log.</li>
+<li>Que contient le fichier ?</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/projet_roscoff/fastqc
+<span class="nv">$ </span>fastqc -f fastq -o ./  ../raw_data/siNT_ER_E2_r3_chr21.fastq 2&gt; ../log/fastqc.log
+<span class="nv">$ </span>less ../log/fastqc.log
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="07.uncompress.html" title="Décompression" >previous</a></li>
+        <li><a href="09.sickle.html" title="Rogner les reads" >next</a></li>
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2015, Denis Puthier and Matthieu Defrance.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

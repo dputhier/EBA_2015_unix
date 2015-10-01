@@ -1,0 +1,34 @@
+
+Télécharger des fichiers
+========================
+
+
+On peut bien sur utiliser le navigateur internet pour télécharger un fichier.
+Cependant, si on dispose de l'adresse du fichier on peut directement lancer le
+téléchargement depuis le terminal en utilisant la commande wget. Ici, nous
+allons utiliser cette commande pour télécharger un fichier fastq.
+
+
+
+.. note::  Pour obtenir l'adresse d'un fichier ou pourra par exemple faire un clique droit et sélectionner 'Copier l'adresse du lien' dans un navigateur internet.
+
+La commande wget
+----------------
+
+Nous souhaitons télécharger un fichier de reads présent à l'adresse: 
+
+::
+
+   http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/siNT_ER_E2_r3_chr21.fastq.gz
+
+Nous allons pour se faire utiliser la commande **wget**. Cette commande
+téléchargera le fichier **siNT_ER_E2_r3_chr21.fastq.gz** dans
+**le dossier courant**. Il convient donc de se placer tout d'abord dans le
+dossier de destination.
+
+.. code-block:: bash 
+
+   $ cd ~/projet_roscoff/raw_data
+   $ pwd
+   $ wget http://pedagogix-tagc.univ-mrs.fr/courses/data/ngs/roscoff/siNT_ER_E2_r3_chr21.fastq.gz
+   $ ls

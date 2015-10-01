@@ -1,0 +1,66 @@
+
+Rogner les reads
+================
+
+La commande sickle
+------------------
+
+Cette commande va nous permettre de trimmer les reads. Ici nous travaillons avec
+des données 'single-end' nous travaillerons donc avec 'sickle se' (voir 'sickle
+pe' pour le paired-end). Les arguments de sickle sont les suivants:
+
+.. code-block:: bash
+
+    $ sickle 
+    
+    Usage: sickle <command> [options]
+    
+    Command:
+    pe  paired-end sequence trimming
+    se  single-end sequence trimming
+    
+    --help, display this help and exit
+    --version, output version information and exit
+
+
+.. code-block:: bash
+
+    $ sickle se Usage: sickle se  -f <fastq sequence file>  -t <quality
+    type> -o <trimmed fastq file> 
+    
+    Options: 
+    -f, --fastq-file, Input fastq file (required) 
+    -t, --qual-type, Type of quality values (solexa (CASAVA < 1.3),
+    illumina (CASAVA 1.3 to 1.7), sanger (which is CASAVA >= 1.8)) (required)
+    -o, --output-file, Output trimmed fastq file (required) 
+    -q, --qual-threshold, Threshold for trimming based on average quality in a
+    window. Default 20. 
+    -l, --length-threshold, Threshold to keep a read based
+    on length after trimming. Default 20. 
+    -x, --no-fiveprime, Don't do five prime trimming. 
+    -n, --discard-n, Discard sequences with any Ns in them.
+    --quiet, Don't print out any trimming information 
+    --help, display this help and exit 
+    --version, output version information and exit
+
+
+Par conséquent notre commande devient:
+
+.. code-block:: bash
+
+    $ cd ~/projet_roscoff/raw_data
+    $ sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20
+
+.. admonition:: Exercice
+   :class: exo
+   
+   * Faites le même exercice en renvoyant l'erreur standard de sickle dans un fichier nommé sickle.log qui devra se trouver dans le dossier log.
+   * Que contient le fichier ?
+
+   .. code-block:: bash 
+   
+      $ ~/projet_roscoff/raw_data
+      $ sickle se  -f siNT_ER_E2_r3_chr21.fastq -t sanger -o ../trimmed/siNT_ER_E2_r3_chr21.fastq -q 20 -l 20 2> ../log/sickle.log
+      $ less ../log/sickle.log
+
+
