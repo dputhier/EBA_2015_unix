@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Visualiser le contenu d’un fichier &mdash; AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="top" title="AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation" href="index.html" />
+    <link rel="next" title="Redirections" href="07c.pipe.html" />
+    <link rel="prev" title="Décompression" href="07.uncompress.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Visualiser le contenu d&#8217;un fichier</a><ul>
+<li><a class="reference internal" href="#la-commande-more-et-la-commande-less">La commande more et la commande less</a></li>
+<li><a class="reference internal" href="#les-commandes-head-et-tail">Les commandes head et tail</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="07.uncompress.html" title="Décompression" accesskey="P">previous </a></li>
+              <li><a href="07c.pipe.html" title="Redirections" accesskey="N">next </a></li>
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Visualiser le contenu d&#8217;un fichier</a><ul>
+<li><a class="reference internal" href="#la-commande-more-et-la-commande-less">La commande more et la commande less</a></li>
+<li><a class="reference internal" href="#les-commandes-head-et-tail">Les commandes head et tail</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="07.uncompress.html"
+                        title="previous chapter">Décompression</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="07c.pipe.html"
+                        title="next chapter">Redirections</a></p>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="visualiser-le-contenu-d-un-fichier">
+<h1>Visualiser le contenu d&#8217;un fichier<a class="headerlink" href="#visualiser-le-contenu-d-un-fichier" title="Permalink to this headline">¶</a></h1>
+<p>Maintenant que le fichier fastq est téléchargé, il peut être intéressant de
+visualiser son contenu. Pour se faire, nous avons de nombreuses commandes
+disponibles sous Linux.</p>
+<div class="section" id="la-commande-more-et-la-commande-less">
+<h2>La commande more et la commande less<a class="headerlink" href="#la-commande-more-et-la-commande-less" title="Permalink to this headline">¶</a></h2>
+<p>La commande <strong>more</strong> permet d&#8217;en savoir plus sur un fichier (i.e de visualiser
+son contenu). La commande <strong>less</strong> fait plus ou moins la même chose. La
+commande <strong>less</strong> est cependant plus récente et plus ergonomique. Nous
+l&#8217;utiliserons donc.</p>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Utilisez la commande less pour visualiser le contenu du fichier siNT_ER_E2_r3_chr21.fastq.</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/projet_roscoff/chip-seq/raw_data
+<span class="nv">$ </span>less siNT_ER_E2_r3_chr21.fastq
+</pre></div>
+</div>
+<ul class="last simple">
+<li>Utilisez les flêches du clavier (haut, bas) pour vous déplacer dans le fichier.</li>
+<li>Pour faire une recherche, on utilisera &#8216;/&#8217;. Tapez &#8216;/AAAA&#8217; pour rechercher la chaîne de caractère AAAA.</li>
+<li>tapez &#8216;q&#8217; pour quitter.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="les-commandes-head-et-tail">
+<h2>Les commandes head et tail<a class="headerlink" href="#les-commandes-head-et-tail" title="Permalink to this headline">¶</a></h2>
+<p>Les commandes head et tail permettent de visualiser les n premières lignes et n
+dernières lignes d&#8217;un fichier respectivement.</p>
+<div class="highlight-python"><div class="highlight"><pre>head [OPTION]... [FILE]...
+tail [OPTION]... [FILE]...
+</pre></div>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Utilisez la commande head pour visualiser le contenu du fichier siNT_ER_E2_r3_chr21.fastq.</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ~/projet_roscoff/raw_data
+<span class="nv">$ </span>head  siNT_ER_E2_r3_chr21.fastq
+</pre></div>
+</div>
+<ul class="simple">
+<li>Utilisez l&#8217;argument -n 10 pour visualiser les 10 premières lignes du fichier.</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>head -n <span class="m">10</span>   siNT_ER_E2_r3_chr21.fastq
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="07.uncompress.html" title="Décompression" >previous</a></li>
+        <li><a href="07c.pipe.html" title="Redirections" >next</a></li>
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2015, Denis Puthier and Matthieu Defrance.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

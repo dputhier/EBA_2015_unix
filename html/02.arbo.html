@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>L’arborescence sous Linux &mdash; AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="top" title="AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">L&#8217;arborescence sous Linux</a><ul>
+<li><a class="reference internal" href="#fichiers-et-dossiers">Fichiers et dossiers</a></li>
+<li><a class="reference internal" href="#dossier-racine">Dossier racine</a></li>
+<li><a class="reference internal" href="#chemins-absolus-et-chemins-relatifs">Chemins absolus et chemins relatifs</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">L&#8217;arborescence sous Linux</a><ul>
+<li><a class="reference internal" href="#fichiers-et-dossiers">Fichiers et dossiers</a></li>
+<li><a class="reference internal" href="#dossier-racine">Dossier racine</a></li>
+<li><a class="reference internal" href="#chemins-absolus-et-chemins-relatifs">Chemins absolus et chemins relatifs</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="l-arborescence-sous-linux">
+<h1>L&#8217;arborescence sous Linux<a class="headerlink" href="#l-arborescence-sous-linux" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fichiers-et-dossiers">
+<h2>Fichiers et dossiers<a class="headerlink" href="#fichiers-et-dossiers" title="Permalink to this headline">¶</a></h2>
+<p>Au même titre que sous Windows, les données sous unix sont contenues dans des
+<strong>fichiers</strong> qui eux même peuvent être contenus dans des <strong>dossiers</strong>. Afin de
+faciliter l&#8217;apprentissage des chemins sous Unix, nous allons utiliser le
+navigateur de fichier dans un premier temps.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Lancez le navigateur de fichier en utilisant le menu &#8220;Places &gt; Home folder&#8221;.</p>
+</div>
+</div>
+<div class="section" id="dossier-racine">
+<h2>Dossier racine<a class="headerlink" href="#dossier-racine" title="Permalink to this headline">¶</a></h2>
+<p>Sous Windows, <strong>la racine du disque</strong> système est désignée par <strong>C:\</strong>. Sous
+UNIX la racine est désignée par <strong>&#8220;/&#8221;</strong>. Dans cette racine on trouve un certain
+nombre de répertoires: La liste de ces répertoires peut varier d&#8217;un système à
+l&#8217;autre (Ubuntu, Centos, OSX...). Exemple de répertoires courant:</p>
+<blockquote>
+<div><ul class="simple">
+<li>/root Répertoire personnel (<span class="icon fa fa-home icon-2x"></span>) de
+l&#8217;administrateur (appelé &#8220;root&#8221;).</li>
+<li>/home Répertoires des utilisateurs (<span class="icon fa fa-home icon-2x"></span>).</li>
+<li>/bin Programmes système (binaries). * /tmp Données temporaires.</li>
+<li>/boot Noyau, Bootmanager. * /dev Fichiers des périphériques (devices).</li>
+<li>/etc Fichiers de configuration. (<em>et cetera</em> or Environment &amp; Tool
+Configuration).</li>
+<li>/lib Librairies partagées.</li>
+<li>/mnt Répertoire de montage pour cdrom, floppy... (mount).</li>
+<li>/opt Installations supplémentaires.</li>
+<li>/proc Informations sur le système et les processus en cours (process).</li>
+<li>/sbin Programmes système pour le root.</li>
+<li>/usr Programmes des utilisateurs.</li>
+<li>/var Fichiers divers et certains fichiers de logs (variable) ..</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/arbo.jpg"><img alt="Illustration de l'arborescence d'un système Unix." src="_images/arbo.jpg" style="width: 1137.6px; height: 464.0px;" /></a>
+<p class="caption"><span class="caption-text">Schéma simplifié de l&#8217;arborescence d&#8217;un système Unix.</span></p>
+</div>
+</div>
+<div class="section" id="chemins-absolus-et-chemins-relatifs">
+<h2>Chemins absolus et chemins relatifs<a class="headerlink" href="#chemins-absolus-et-chemins-relatifs" title="Permalink to this headline">¶</a></h2>
+<p>Lorsqu&#8217;on désignera un dossier ou un fichier on pourra utiliser son
+<strong>chemin relatif ou son chemin absolu</strong>.</p>
+<p>Le <strong>chemin absolu</strong> correspond au chemin (la succession de dossiers à ouvrir)
+qui depuis la racine de l&#8217;arborescence permet d&#8217;accèder à l&#8217;élément en
+question. Le <strong>chemin absolu</strong> est non ambigu et on peut l&#8217;utiliser quel que
+soit le dossier dans lequel on se trouve. Exemple de chemin absolu:</p>
+<div class="highlight-bash"><div class="highlight"><pre>/usr/share/icons/hicolor/512x512
+</pre></div>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Dans le navigateur de fichier, vous apercevrez une icône en forme de crayon. Cliquez sur le crayon. Dans la zone de saisie qui apparait tapez le chemin pour vous placer successivement dans:</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre>/
+/bin
+/root
+/tmp/
+/usr/local
+/root/Desktop
+/usr/share/icons/hicolor/512x512
+</pre></div>
+</div>
+</div>
+<p>Le <strong>chemin relatif</strong> est une autre solution permettant de désigner un dossier
+ou un fichier. Cependant, l&#8217;écriture se réfère à votre position à un instant
+donné dans l&#8217;arborescence. En écriture relative, certains opérateurs sont
+particulièrement utiles:</p>
+<div class="highlight-bash"><div class="highlight"><pre>.. <span class="c"># Désigne le répertoire supérieur dans l&#39;arborescence.</span>
+../.. <span class="c"># Désigne deux répertoires supérieurs dans l&#39;arborescence.</span>
+../../.. <span class="c"># Désigne trois répertoires supérieurs dans l&#39;arborescence (...).</span>
+./ <span class="c"># Désigne le répertoire dans lequel on se trouve</span>
+. <span class="c"># Idem. Désigne le répertoire dans lequel on se trouve</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">tout ce qui se trouve à droite du caractère # est un commentaire.</p>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Testez les chemins suivant dans le navigateur de fichiers</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre>/usr/local
+/usr/local/..
+/usr/local/../..
+/usr/local/bin/../../..
+</pre></div>
+</div>
+</div>
+<p>En <strong>écriture relative</strong> si l&#8217;on se trouve dans un dossier (e.g &#8216;/&#8217;) qui
+contient le dossier (e.g &#8216;root&#8217;) on peut directement utiliser le nom du dossier
+comme chemin. Par exemple si je suis dans le dossier racine (&#8216;/&#8217;) je peux
+écrire &#8216;root&#8217;:</p>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Testez les chemins suivant dans le navigateur de fichiers</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre>/
+root  <span class="c"># Sans le prefixe &#39;/&#39; !</span>
+/
+./root <span class="c"># En préfixant avec ./</span>
+/
+root/Desktop <span class="c"># Le dossier Desktop qui se trouve dans le dossier root.</span>
+Desktop <span class="c"># Ne fonctionne pas !! Pourquoi ?</span>
+</pre></div>
+</div>
+</div>
+<p>En effet ce dossier (root) est visible qu&#8217;en je suis localisé dans le dossier
+&#8216;/&#8217;. Par contre si je suis dans le dossier /root/Desktop, je ne pourrai pas
+faire référence à ce chemin (i.e root) car ce dossier n&#8217;existe pas dans le
+dossier courant.</p>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Testez les chemins suivant dans le navigateur de fichiers.</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre>/root/Desktop
+root <span class="c"># La ça ne fonctionne pas. il n&#39;y a pas de dossier root dans Desktop</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Sous Linux/UNIX on parle de répertoire <strong>home</strong> pour désigner le répertoire contenant les données d&#8217;un utilisateur connecté. La représentation symbolique de ce répertoire utilisateur est <strong>~</strong>.</p>
+</div>
+<div class="exo admonition">
+<p class="first admonition-title">Exercice</p>
+<ul class="simple">
+<li>Testez les chemins suivant dans le navigateur de fichiers.</li>
+</ul>
+<div class="last highlight-bash"><div class="highlight"><pre>~
+~/Desktop
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2015, Denis Puthier and Matthieu Defrance.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

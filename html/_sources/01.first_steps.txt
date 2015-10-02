@@ -1,0 +1,19 @@
+Découverte rapide du Bureau MATE
+================================
+
+Ce bureau est très similaire aux bureaux que vous avez pu rencontrer sous l'environnement Windows (XP, Seven,...) ou le système OSX sous Mac.
+
+Vous disposez d'un bureau contenant une **barre des tâches** dans la partie supérieure et un **menu Application** dans la partie  supérieure gauche. Dans ce menu vous trouverez un certains nombre de sous menus vous permettant d'accéder à des applications (e.g Firefox, Chrome, Libreoffice,...).
+     
+.. important::  Pour la suite nous aurons besoin de lancer un terminal (!). Pour lancer ce terminal, sélectionnez dans le menu : **Application > System tools > MATE terminal**.
+
+
+.. figure:: img/mate.jpg
+   :width: 200px
+   :align: center
+   :alt: Interface MATE.
+         
+   Le bureau MATE avec sa configuration par défaut. 
+
+
+

@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Se déplacer dans l’arborescence &mdash; AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '1.0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="top" title="AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Se déplacer dans l&#8217;arborescence</a><ul>
+<li><a class="reference internal" href="#la-commande-cd">La commande cd</a></li>
+<li><a class="reference internal" href="#la-commande-pwd">La commande pwd</a></li>
+<li><a class="reference internal" href="#se-deplacer-dans-son-home">Se déplacer dans son &#8216;home&#8217;</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Se déplacer dans l&#8217;arborescence</a><ul>
+<li><a class="reference internal" href="#la-commande-cd">La commande cd</a></li>
+<li><a class="reference internal" href="#la-commande-pwd">La commande pwd</a></li>
+<li><a class="reference internal" href="#se-deplacer-dans-son-home">Se déplacer dans son &#8216;home&#8217;</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="se-deplacer-dans-l-arborescence">
+<h1>Se déplacer dans l&#8217;arborescence<a class="headerlink" href="#se-deplacer-dans-l-arborescence" title="Permalink to this headline">¶</a></h1>
+<p>Maintenant que nous nous sommes déplacé dans l&#8217;arborescence à l&#8217;aide du navigateur de fichier, nous allons nous déplacer dans l&#8217;arborescence à l&#8217;aide du terminal.</p>
+<div class="section" id="la-commande-cd">
+<h2>La commande cd<a class="headerlink" href="#la-commande-cd" title="Permalink to this headline">¶</a></h2>
+<p>La commande <strong>cd (change working directory)</strong> commande permet de changer de répertoire, de se <strong>déplacer dans l&#8217;arborescence</strong>.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">On doit fournir un <strong>chemin</strong> (&#8216;path&#8217;) à cette commande pour que celle-ci sache vers quel dossier on souhaite se déplacer (<em>cf</em> exemple ci-dessous). Ce chemin constitue l&#8217;unique <strong>argument</strong> de cette commande.</p>
+</div>
+<p>Exemples:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> / <span class="c"># On se déplace à la racine</span>
+<span class="nv">$ </span><span class="nb">cd</span> /usr/ <span class="c"># On se déplace dans le répertoire usr présent à la racine</span>
+<span class="nv">$ </span><span class="nb">cd</span> /usr/local <span class="c"># On se déplace dans le répertoire usr qui contient un répertoire nommé local</span>
+<span class="nv">$ </span><span class="nb">cd</span> /usr/local/bin <span class="c"># On se déplace dans le répertoire usr qui contient un répertoire nommé local qui lui même contient un répertoire nommé bin.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="la-commande-pwd">
+<h2>La commande pwd<a class="headerlink" href="#la-commande-pwd" title="Permalink to this headline">¶</a></h2>
+<p>La commande <strong>pwd (print working directory)</strong> permet de savoir dans quel répertoire nous sommes localisés à l&#8217;instant même où on fait appelle à cette commande (on parle de <strong>répertoire courant</strong>). Tapez la commande suivante dans le terminal, elle permet de se déplacer à la racine du disque.</p>
+<div class="highlight-text"><div class="highlight"><pre>$ pwd # On demande au système de nous indiquer le répertoire courant
+$ cd / # On se déplace à la racine
+$ pwd # Le répertoire courant a changé.
+usage: pwd [-L | -P]
+</pre></div>
+</div>
+<div class="highlight-text"><div class="highlight"><pre>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Tous les caractères se trouvant à droite du <strong>caractère #</strong> ne sont pas interprétés par le système.
+Il s&#8217;agit de <strong>commentaires</strong>.</p>
+</div>
+</div>
+<div class="section" id="se-deplacer-dans-son-home">
+<h2>Se déplacer dans son &#8216;home&#8217;<a class="headerlink" href="#se-deplacer-dans-son-home" title="Permalink to this headline">¶</a></h2>
+<p>Pour se déplacer dans son répertoire utilisateur (&#8216;home&#8217;) il suffit de demander à aller dans le répertoire ~.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /
+<span class="nv">$ </span><span class="nb">pwd</span>
+<span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On peut aussi écrire directement &#8216;cd&#8217; (sans l&#8217;argument &#8216;~&#8217;). En effet, quand la commande &#8216;cd&#8217; est appelée sans argument elle change le répertoire courant à ~, par défaut.</p>
+</div>
+<div class="admonition-exercice-class-exo admonition">
+<p class="first admonition-title">Exercice
+ :class: exo</p>
+<p class="last">Utilisez le terminal pour vous déplacer dans /root/Desktop et depuis là dans /root (en écriture relative).</p>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">AVIESAN Bioinformatic School: introduction to UNIX 1.0 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2015, Denis Puthier and Matthieu Defrance.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>
